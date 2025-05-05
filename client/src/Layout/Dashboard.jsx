@@ -9,7 +9,7 @@ const Dashboard = () => {
     return (
         <div className="flex">
             {/* dashboard side bar */}
-            <div className="w-64 min-h-screen bg-orange-400">
+            <div className="w-64 min-h-screen bg-orange-400 text-black">
                 <ul className="menu p-4">
                     <li>
                         <NavLink to="/dashboard/userHome">
