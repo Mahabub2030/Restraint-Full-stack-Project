@@ -25,10 +25,10 @@ async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
-    const userCollection = client.db("Birstodb").collection("users");
-    const menuCollection = client.db("Birstodb").collection("menu");
-    const reviewCollection = client.db("Birstodb").collection("reviews");
-    const cartCollection = client.db("Birstodb").collection("cart");
+    const userCollection = client.db("ReturnersDB").collection("users");
+    const menuCollection = client.db("ReturnersDB").collection("menu");
+    const reviewCollection = client.db("ReturnersDB").collection("reviews");
+    const cartCollection = client.db("ReturnersDB").collection("cart");
 
     //  jwt reletd api
     app.post("/jwt", async (req, res) => {
@@ -134,11 +134,11 @@ async function run() {
       res.send(result);
     });
 
-    app.post('/menu', verifyToken, verfiyAdmin, async (req, res) => {
+    app.post("/menu", verifyToken, verfiyAdmin, async (req, res) => {
       const item = req.body;
       const result = await menuCollection.insertOne(item);
-      res.send(result)
-    })
+      res.send(result);
+    });
    app.delete("/menu/:id", verifyToken, verfiyAdmin, async (req, res) => {
      const id = req.params.id;
      const query = { _id: new ObjectId(id) };
