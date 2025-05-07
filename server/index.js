@@ -12,6 +12,8 @@ app.use(express.json());
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const uri = `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ac-cgkxfia-shard-00-00.x9t7sgg.mongodb.net:27017,ac-cgkxfia-shard-00-01.x9t7sgg.mongodb.net:27017,ac-cgkxfia-shard-00-02.x9t7sgg.mongodb.net:27017/?ssl=true&replicaSet=atlas-nszs70-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0`;
 
+// const uri = `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ac-cgkxfia-shard-00-00.x9t7sgg.mongodb.net:27017,ac-cgkxfia-shard-00-01.x9t7sgg.mongodb.net:27017,ac-cgkxfia-shard-00-02.x9t7sgg.mongodb.net:27017/?ssl=true&replicaSet=atlas-nszs70-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0`;
+
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {
@@ -25,10 +27,10 @@ async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
-    const userCollection = client.db("ReturnersDB").collection("users");
-    const menuCollection = client.db("ReturnersDB").collection("menu");
-    const reviewCollection = client.db("ReturnersDB").collection("reviews");
-    const cartCollection = client.db("ReturnersDB").collection("cart");
+    const userCollection = client.db("Birstodb").collection("users");
+    const menuCollection = client.db("Birstodb").collection("menu");
+    const reviewCollection = client.db("Birstodb").collection("reviews");
+    const cartCollection = client.db("Birstodb").collection("cart");
 
     //  jwt reletd api
     app.post("/jwt", async (req, res) => {
