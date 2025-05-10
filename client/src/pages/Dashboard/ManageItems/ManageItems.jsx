@@ -6,7 +6,8 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { Link } from "react-router-dom";
 
 const ManageItems = () => {
-  const [menu, refetch] = useMenu();
+  const [menu, , refetch] = useMenu();
+
   const axiosSecure = useAxiosSecure();
 
   const handleDeleteItem = (item) => {
@@ -22,6 +23,7 @@ const ManageItems = () => {
       if (result.isConfirmed) {
         const res = await axiosSecure.delete(`/menu/${item._id}`);
         console.log(res.data);
+        console.log("Deleting item ID:", item._id);
         if (res.data.deletedCount > 0) {
           // refetch to update the ui
           refetch();
