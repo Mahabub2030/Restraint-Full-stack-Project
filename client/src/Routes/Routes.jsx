@@ -62,7 +62,7 @@ export const router = createBrowserRouter([
       // normal user routes
       {
         path: "cart",
-        element:<Cart></Cart>
+        element: <Cart></Cart>,
       },
 
       // admin only routes
