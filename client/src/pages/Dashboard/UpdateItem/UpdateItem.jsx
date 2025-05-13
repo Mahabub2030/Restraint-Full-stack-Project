@@ -15,11 +15,9 @@ const UpdateItem = () => {
     const loaderData = useLoaderData();
 console.log(loaderData); // Check if loaderData is correct
 
-const { name, category, recipe, price, _id } = useLoaderData || {};
+// const { name, category, recipe, price, _id } = useLoaderData || {};
 
-if (!_id) {
-  console.error("Item ID is missing");
-}
+
 
    
 //   const { register, handleSubmit } = useForm();
