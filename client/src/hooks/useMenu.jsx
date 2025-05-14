@@ -15,6 +15,14 @@ const useMenu = () => {
   //             setLoading(false);
   //         });
   // }, [])
+  // useEffect(() => {
+  //     fetch('http://localhost:5000/menu')
+  //         .then(res => res.json())
+  //         .then(data => {
+  //             setMenu(data);
+  //             setLoading(false);
+  //         });
+  // }, [])
 
   const {
     data: menu = [],
