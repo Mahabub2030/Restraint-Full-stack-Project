@@ -37,7 +37,7 @@ const AddItems = () => {
                 // show success popup
                 reset();
                 Swal.fire({
-                    position: "top-end",
+                    position: "top-center",
                     icon: "success",
                     title: `${data.name} is added to the menu.`,
                     showConfirmButton: false,
